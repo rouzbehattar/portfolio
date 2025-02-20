@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roxana Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
+</head>
+<body>
+    <div class="flipbook">
+      <div class="hard">My Pokemon Gallery <small>~ HankTheTank</small></div>
+      <div class="hard"></div>
+      <div>
+        <img src="img/1.png" alt="" />
+      </div>
+      <div>
+        <img src="img/2.png" alt="" />
+      </div>
+      <div>
+        <img src="img/3.png" alt="" />
+      </div>
+      <div>
+        <img src="img/4.png" alt="" />
+      </div>
+      <div>
+        <img src="img/5.png" alt="" />
+      </div>
+      <div>
+        <img src="img/6.png" alt="" />
+      </div>
+      <div>
+        <img src="img/7.png" alt="" />
+      </div>
+      <div>
+        <img src="img/8.png" alt="" />
+      </div>
+      <div>
+        <img src="img/9.png" alt="" />
+      </div>
+      <div>
+        <img src="img/10.png" alt="" />
+      </div>
+      <div>
+        <img src="img/11.png" alt="" />
+      </div>
+      <div>
+        <img src="img/12.png" alt="" />
+      </div>
+      <div>
+        <img src="img/13.png" alt="" />
+      </div>
+      <div>
+        <img src="img/14.png" alt="" />
+      </div>
+      <div>
+        <img src="img/15.png" alt="" />
+      </div>
+      <div>
+        <img src="img/16.png" alt="" />
+      </div>
+      <div>
+        <img src="img/17.png" alt="" />
+      </div>
+      <div>
+        <img src="img/18.png" alt="" />
+      </div>
+      <div>
+        <img src="img/19.png" alt="" />
+      </div>
+      <div>
+        <img src="img/20.png" alt="" />
+      </div>
+      <div>
+        <img src="img/21.png" alt="" />
+      </div>
+      <div>
+        <img src="img/22.png" alt="" />
+      </div>
+      <div>
+        <img src="img/23.png" alt="" />
+      </div>
+      <div>
+        <img src="img/24.png" alt="" />
+      </div>
+      <div>
+        <img src="img/25.png" alt="" />
+      </div>
+      <div>
+        <img src="img/26.png" alt="" />
+      </div>
+      <div>
+        <img src="img/27.png" alt="" />
+      </div>
+      <div>
+        <img src="img/28.png" alt="" />
+      </div>
+      <div>
+        <img src="img/29.png" alt="" />
+      </div>
+      <div>
+        <img src="img/30.png" alt="" />
+      </div>
+      <div>
+        <img src="img/31.png" alt="" />
+      </div>
+      <div>
+        <img src="img/32.png" alt="" />
+      </div>
+      <div>
+        <img src="img/33.png" alt="" />
+      </div>
+      <div>
+        <img src="img/34.png" alt="" />
+      </div>
+      <div>
+        <img src="img/35.png" alt="" />
+      </div>
+      <div>
+        <img src="img/36.png" alt="" />
+      </div>
+      <div>
+        <img src="img/37.png" alt="" />
+      </div>
+      <div>
+        <img src="img/38.png" alt="" />
+      </div>
+      <div>
+        <img src="img/39.png" alt="" />
+      </div>
+      <div>
+        <img src="img/40.png" alt="" />
+      </div>
+      <div>
+        <img src="img/41.png" alt="" />
+      </div>
+      <div>
+        <img src="img/42.png" alt="" />
+      </div>
+      <div>
+        <img src="img/43.png" alt="" />
+      </div>
+      <div>
+        <img src="img/44.png" alt="" />
+      </div>      
+      <div class="hard"></div>
+      <div class="hard">Thank You <small>~ HankTheTank</small></div>
+    </div>
+    <div class="paginator">
+        <button id="prevBtn">◀️ Previous</button>
+        <span class="current-page">Page <span id="currentPage">1</span> of <span id="totalPages">44</span></span>
+        <button id="nextBtn">Next ▶️</button>
+    </div>
+  
+    <script src="jquery.js"></script>
+    <script src="turn.js"></script>
+    <script>
+        const flipbook = $(".flipbook").turn();
+        const totalPages = flipbook.turn("pages");
+        $("#totalPages").text(totalPages);
+        
+        let currentPage = 1;
+        $("#currentPage").text(currentPage);
+  
+        $("#prevBtn").click(function() {
+            if (currentPage > 1) {
+                currentPage--;
+                currentPage--;
+                flipbook.turn("page", currentPage);
+                $("#currentPage").text(currentPage);
+            }
+        });
+  
+        $("#nextBtn").click(function() {
+            if (currentPage < totalPages) {
+                currentPage++;
+                currentPage++;
+                flipbook.turn("page", currentPage);
+                $("#currentPage").text(currentPage);
+            }
+        });
+  
+        // Update current page on flip
+        flipbook.on("turned", function(event, page) {
+            currentPage = page;
+            $("#currentPage").text(currentPage);
+        });
+
+        
+      </script>
+  </body>
+</html>
